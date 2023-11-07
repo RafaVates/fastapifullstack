@@ -6,6 +6,8 @@ from starlette.staticfiles import StaticFiles
 from starlette import status
 from fastapi.responses import RedirectResponse
 
+
+# Subido a rtoutain@vates.com github account
 app = FastAPI()
 
 models.Base.metadata.create_all(bind=engine)

@@ -57,3 +57,8 @@ async def user_password_change(request: Request, username:str = Form(...),
             db.commit()
             msg = "Password changed successfully"
     return templates.TemplateResponse("edit-user-pass.html", {"request": request, "user": user, "msg": msg})
+
+@router.get("/users")
+async def get_users(db: Session = Depends(get_db)):
+    users = db.query(models.Users).all()
+    return users

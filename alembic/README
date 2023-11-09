@@ -1,0 +1,20 @@
+Generic single-database configuration.
+
+1 - pip install alembic
+2 - alembic init alembic
+3 - edit alembic.ini and set sqlalchemy.url
+4 - edit alembic/env.py and set target_metadata
+5 - alembic revision --autogenerate -m "initial"
+6 - alembic upgrade head
+7 - edit alembic/versions/*.py and add "import sqlalchemy as sa" and "sa.Column(...)"
+8 - alembic revision --autogenerate -m "add column"
+9 - alembic upgrade head
+10 - alembic downgrade -1
+11 - alembic upgrade head
+12 - alembic downgrade base
+13 - alembic upgrade head
+14 - alembic history
+15 - alembic current
+16 - alembic stamp head
+17 - alembic stamp base
+18 - alembic stamp 1a2b3c4d5e
